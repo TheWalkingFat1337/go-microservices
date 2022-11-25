@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  db: 
+    image: mysql
+    volumes:
+      - volumeName:containerPath:ro
+      - volumeName:containerPath:ro
+    ports:
+      - "8080:80"
+    environment:
+      - name=value
