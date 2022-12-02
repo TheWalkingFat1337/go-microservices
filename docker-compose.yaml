@@ -1,11 +1,21 @@
 version: '3.8'
 services:
-  db: 
-    image: mysql
-    volumes:
-      - volumeName:containerPath:ro
-      - volumeName:containerPath:ro
-    ports:
-      - "8080:80"
+  go_container_1:
+    image: mysql:latest
     environment:
-      - name=value
+      MYSQL_DATABASE: 'test'
+      MYSQL_ROOT_PASSWORD: 1234
+    ports:
+      - '1234:3306'
+    expose:
+      - '3306'
+
+  go_container_2:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: 'test_2'
+      MYSQL_ROOT_PASSWORD: 1234
+    ports:
+      - '2345:3306'
+    expose:
+      - '3306'
