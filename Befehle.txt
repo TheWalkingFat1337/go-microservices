@@ -1,0 +1,2 @@
+docker exec - <containername> mysql -u root -p
+docker logs -f <containername>

@@ -9,6 +9,6 @@ COPY . .
 
 RUN go build -o main .
 
-EXPOSE 1234
+EXPOSE 5432
 
-CMD ["/app/main"]
+CMD ["./main"]
