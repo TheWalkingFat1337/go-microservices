@@ -1,14 +1,15 @@
+# syntax=docker/dockerfile:1
+
 FROM golang:latest
 
 WORKDIR /app
 
-COPY go.mod go.sum ./
+COPY go.mod ./
+COPY go.sum ./
 RUN go mod download
 
-COPY . .
+COPY *.go ./
 
-RUN go build -o main .
+RUN go build -o app
 
-EXPOSE 5432
-
-CMD ["./main"]
+EXPOSE 1337

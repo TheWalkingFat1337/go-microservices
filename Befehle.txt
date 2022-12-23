@@ -1,2 +1,5 @@
 docker exec - <containername> mysql -u root -p
 docker logs -f <containername>
+
+docker build -t my-microservice .
+docker run -p 8080:8080 my-microservice

@@ -1,15 +1,15 @@
 version: '3.8'
 services:
-  restapi:
-    build:
-      context: .
-      dockerfile: "C:/Users/rouve/Desktop/go-microservice-user/Dockerfile"
-    ports:
-       - "1337:3306"
-    expose:
-       - "3306"
-    environment:
-      DATABASE_HOST: mysql
+  # restapi:
+  #   build:
+  #     context: .
+  #     dockerfile: "C:\Users\Julian\OneDrive - bwedu\DHBW Mannheim\5. Semester\Integrationsseminar\Go-Microservice\go-microservice-user\Dockerfile"
+  #   ports:
+  #      - "1337:3306"
+  #   expose:
+  #      - "3306"
+  #   environment:
+  #     DATABASE_HOST: mysql
 
   mysql_user:
     image: mysql:latest
