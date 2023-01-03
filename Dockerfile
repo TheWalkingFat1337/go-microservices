@@ -1,15 +1,21 @@
-# syntax=docker/dockerfile:1
-
 FROM golang:latest
 
+# Set the Current Working Directory inside the container
 WORKDIR /app
 
-COPY go.mod ./
-COPY go.sum ./
+# We want to populate the module cache based on the go.{mod,sum} files.
+COPY go.mod .
+COPY go.sum .
+
 RUN go mod download
 
-COPY *.go ./
+COPY . .
 
-RUN go build -o app
+# Build the Go app
+RUN go build
 
-EXPOSE 1337
+# This container exposes port 1234 to the outside world
+EXPOSE 1234
+
+# Run the binary program produced by `go install`
+CMD ["./go-microservices"]
