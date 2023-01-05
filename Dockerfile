@@ -9,4 +9,4 @@ RUN go build -o main
 
 EXPOSE 1234
 
-EXPOSE 1337
+CMD [ "/app/main" ]
