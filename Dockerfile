@@ -1,11 +1,11 @@
 FROM golang:latest
 
-WORKDIR /app
+WORKDIR /user
 
-COPY . /app
+COPY . /user
 
 RUN go build -o main
 
 EXPOSE 1234
 
-CMD [ "/app/main" ]
+CMD [ "/user/main" ]
