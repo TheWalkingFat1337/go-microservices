@@ -1,6 +1,5 @@
 FROM golang:latest
 
-# Set the Current Working Directory inside the container
 WORKDIR /app
 
 COPY . /app
