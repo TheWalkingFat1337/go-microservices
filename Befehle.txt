@@ -3,3 +3,15 @@ docker logs -f <containername>
 
 docker build -t my-microservice .
 docker run -p 8080:8080 my-microservice
+
+FROM golang:latest AS build
+
+WORKDIR /app
+
+COPY go.mod ./
+COPY go.sum ./
+RUN go mod download
+
+COPY . ./
+
+RUN go build -o /go-microservice-user

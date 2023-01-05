@@ -7,9 +7,9 @@ import (
 )
 
 func GetUsers(c *gin.Context) {
-	users := []models.User{}
-	config.DB.Find(&users)
-	c.JSON(200, &users)
+	user := []models.User{}
+	config.DB.Find(&user)
+	c.JSON(200, &user)
 }
 
 func CreateUser(c *gin.Context) {
